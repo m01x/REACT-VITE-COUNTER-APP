@@ -1,8 +1,9 @@
+require('dotenv').config();
+
 export const getImagen = async () => {
   try {
-    const apiKey = '';
     const resp = await fetch(
-      `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`
+      `http://api.giphy.com/v1/gifs/random?api_key=${process.env.VITE_BASE_APIKEY}`
     );
     const { data } = await resp.json();
 
